@@ -1,9 +1,8 @@
 <script setup lang="ts">
 
-import {ref, useField} from "../../.nuxt/imports";
+import {ref, useField, watch} from "../../.nuxt/imports";
 import {CartPopulatedItem} from "../../types/cart";
 import {useCartStore} from "../../store/cart.store";
-import {watch} from "fs";
 import {toast} from "vue3-toastify";
 
 const props = defineProps<{
