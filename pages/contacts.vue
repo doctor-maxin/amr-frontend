@@ -7,6 +7,7 @@ import UiInput from "~/components/ui/UiInput.vue";
 import TelLink from "~/components/helpers/TelLink.vue";
 import EmailLink from "~/components/helpers/EmailLink.vue";
 import CompanyMapHelper from '~/components/helpers/CompanyMap.vue'
+import {markRaw} from "../.nuxt/imports";
 
 const breadCrumbs = markRaw<IBreadCrumb[]>([{
 	title: 'Главная',
@@ -15,7 +16,6 @@ const breadCrumbs = markRaw<IBreadCrumb[]>([{
 	title: 'Каталог',
 	path: '/contacts'
 }])
-
 
 </script>
 <template>

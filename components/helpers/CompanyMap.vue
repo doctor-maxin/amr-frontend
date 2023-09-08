@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import {GoogleMap} from 'vue3-google-map';
 import UiButton from "~/components/ui/UiButton.vue";
+import {ref, useRuntimeConfig, watch} from "../../.nuxt/imports";
 
 const runtimeConfig = useRuntimeConfig()
 
