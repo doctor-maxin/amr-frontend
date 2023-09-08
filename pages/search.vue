@@ -2,6 +2,7 @@
 import UiButton from "~/components/ui/UiButton.vue";
 import {useUrlSearchParams} from "@vueuse/core";
 import {IProduct} from "~/types/product";
+import {onMounted, ref, useDirectusItems, watch} from "../.nuxt/imports";
 
 const params = useUrlSearchParams('history')
 const search = ref(params?.search?.toString() ?? '')
@@ -46,27 +47,30 @@ onMounted(() => {
 			          variant="dark"/>
 		</form>
 		<h2 v-if="list.length" class="hidden text-2xl lg:mb-[1.38rem] font-semibold lg:block">Товары:</h2>
-		<div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-y-[1.38rem] lg:gap-x-[1.88rem]" v-if="list && !isLoading">
-			<template v-for="product of list" :key="product.id">
-				<div class="w-full p-[1.125rem] lg:p-[0.875rem] bg-system-gray-500 rounded-[1.25rem] grid grid-cols-[4.375rem_auto] items-center lg:grid-cols-[6.25rem_auto] gap-[1.31rem] lg:gap-[1.44rem]">
-					<NuxtImg
-						:src="product.images?.length ? product.images[0].directus_files_id : '668abdf6-1ee7-42fe-a5a6-b5ce1f846586'"
-						provider="directus"
-						class="rounded-[0.635rem] lg:rounded-[1.25rem] aspect-square object-cover"
-					/>
-					<div class="flex flex-col gap-[0.135rem]">
-						<span class="font-semibold text-system-black-900 lg:text-2xl">{{ product.name }}</span>
-						<span class="font-semibold text-system-black-900 lg:text-2xl">{{ product.price }}</span>
-					</div>
-				</div>
-			</template>
-		</div>
-		<div v-else-if="!isLoading">
-			<span class="text-2xl font-semibold">Ничего не найдено...</span>
-		</div>
-		<div v-else>
+		<template v-if="isLoading">
 			<span class="text-2xl font-semibold">Загрузка...</span>
-		</div>
+		</template>
+		<template v-else>
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-y-[1.38rem] lg:gap-x-[1.88rem]" v-if="list?.length">
+				<template v-for="product of list" :key="product.id">
+					<div class="w-full p-[1.125rem] lg:p-[0.875rem] bg-system-gray-500 rounded-[1.25rem] grid grid-cols-[4.375rem_auto] items-center lg:grid-cols-[6.25rem_auto] gap-[1.31rem] lg:gap-[1.44rem]">
+						<NuxtImg
+							:src="product.images?.length ? product.images[0].directus_files_id : '668abdf6-1ee7-42fe-a5a6-b5ce1f846586'"
+							provider="directus"
+							class="rounded-[0.635rem] lg:rounded-[1.25rem] aspect-square object-cover"
+						/>
+						<div class="flex flex-col gap-[0.135rem]">
+							<span class="font-semibold text-system-black-900 lg:text-2xl">{{ product.name }}</span>
+							<span class="font-semibold text-system-black-900 lg:text-2xl">{{ product.price }}</span>
+						</div>
+					</div>
+				</template>
+			</div>
+			<div v-else>
+				<span class="text-2xl font-semibold">Ничего не найдено...</span>
+			</div>
+		</template>
+
 	</main>
 </template>
 

@@ -3,7 +3,7 @@ import {IBreadCrumb, ICustomerPage, ICustomerPages} from "../types/common";
 import HeaderPage from '../components/page/Header.vue'
 import {Swiper, SwiperSlide} from "swiper/vue";
 import 'swiper/css';
-import {useDirectusItems} from "../.nuxt/imports";
+import {computed, ref, useAsyncData, useDirectusItems, useRoute, useRouter} from "../.nuxt/imports";
 
 const {getSingletonItem} = useDirectusItems()
 

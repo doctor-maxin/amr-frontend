@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import {ITableBlock} from "../../types/common";
+import {computed} from "../../.nuxt/imports";
 
 const props = defineProps<{
 	block: ITableBlock

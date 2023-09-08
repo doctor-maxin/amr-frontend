@@ -4,19 +4,25 @@ import {reactive, useCurrency, useDirectusItems} from "../../.nuxt/imports";
 import {IProduct} from "../../types/product";
 import UiPlusMinusInput from "../ui/UiPlusMinusInput.vue";
 import {CartPopulatedItem} from "../../types/cart";
+import {storeToRefs} from "pinia";
 
 const {getItems} = useDirectusItems()
 const cartStore = useCartStore()
+const {items} = storeToRefs(cartStore)
 const lines = reactive<Map<string, CartPopulatedItem>>(new Map())
+console.log(items.value)
+
+let filters: any = {}
+if (items.value?.length) {
+	filters.id = {
+		_in: items.value.map(item => item.id)
+	}
+}
 
 const products = await getItems<IProduct>({
 	collection: 'products',
 	params: {
-		filter: {
-			id: {
-				_in: cartStore.items.map(item => item.id)
-			}
-		}
+		filter: filters
 	}
 })
 
@@ -45,7 +51,7 @@ const {toMoney} = useCurrency()
 					<div>
 						<nuxt-link><span>{{ item.product.title }}</span></nuxt-link>
 					</div>
-					<div><UiPlusMinusInput /></div>
+					<div><UiPlusMinusInput :line="item" /></div>
 					<div class="font-semibold text-xl">{{toMoney(item.product.price)}}</div>
 					<div>
 						<button class="flex items-center gap-2.5 p-2 lg:gap-2 lg:p-0 rounded-[6.88rem] bg-system-gray-500 lg:bg-transparent">

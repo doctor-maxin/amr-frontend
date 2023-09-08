@@ -13,7 +13,7 @@ export const useCartStore = defineStore('cart', {
     },
     actions: {
         async getCart() {
-            const {data} = await useFetch<CartItem[]>('/api/cart')
+            const {data} = await useFetch<CartItem[]>('/api/cart').json()
             if (data.value?.length) this.items = data.value
         },
         async setLine(id: string, count: number) {
@@ -25,13 +25,10 @@ export const useCartStore = defineStore('cart', {
         async addProduct(id: string, count = 1) {
             const appConfig = useAppConfig()
 
-            const {data} = await useFetch<CartItem[]>('/api/cart', {
-                method: 'post',
-                body: JSON.stringify({
-                    id,
-                    count
-                })
-            })
+            const {data} = await useFetch<CartItem[]>('/api/cart').post({
+                id,
+                count
+            }).json()
             if (data.value?.length) {
                 this.items = data.value
                 toast.success(appConfig.messages?.productAdded)

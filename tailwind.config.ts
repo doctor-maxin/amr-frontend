@@ -58,6 +58,7 @@ export default {
         },
         'system-gray': {
           DEFAULT:  'hsl(0, 0%, 90%)', // #e6e6e6
+          400: 'hsl(0, 0%, 21.2%)',// #F1F1F1
           500: 'hsl(0, 0%, 95%)',// #F1F1F1
           600: 'hsl(0, 0%, 85%)', // #D9D9D9
           700: 'hsl(0, 0%, 20%)',

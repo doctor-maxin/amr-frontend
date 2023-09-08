@@ -204,7 +204,7 @@ export type ICustomerPageFull = ICustomerPage & {
     }
 }
 
-export  interface AppConfigInput extends AppConfig{
+export  interface AppConfigInput extends AppConfig {
     noImageId: string;
     messages: {
         productAdded: string;

@@ -4,6 +4,7 @@ import FeedbackBlock from "~/components/main/FeedbackBlock.vue";
 import Banner from "~/components/banner/Banner.vue";
 import Advantages from "~/components/advantages/Advantages.vue";
 import LazyBlocksIdeasIdeiasBlock from '~/components/blocks/ideas/IdeiasBlock.vue'
+import CallBackForm from "../components/common/CallBackForm.vue";
 </script>
 
 <template>
@@ -23,6 +24,7 @@ import LazyBlocksIdeasIdeiasBlock from '~/components/blocks/ideas/IdeiasBlock.vu
 		<div class="mb-[4.25rem] lg:mb-[7.125rem]">
 			<LazyBlocksIdeasIdeiasBlock />
 		</div>
+		<CallBackForm />
 	</div>
 </template>
 

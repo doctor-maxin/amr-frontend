@@ -4,6 +4,7 @@ import {defineNuxtConfig} from "nuxt/config";
 export default defineNuxtConfig({
   devtools: { enabled: false },
   css: ['~/assets/css/fonts.css','~/assets/css/main.css'],
+  loading: '~/components/loader/Loader.vue',
   ssr: false,
   imports: {
       autoImport: false
@@ -36,7 +37,6 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     ['nuxt-directus', {
       url: 'http://109.195.74.198:8055',
-      token: 'XVW8VWNB0eYYLj8CSPh2aTWeEl9dFaZQ',
     }],
     ['@vee-validate/nuxt', {
       autoImports: true,
