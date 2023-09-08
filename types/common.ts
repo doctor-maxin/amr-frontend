@@ -208,5 +208,6 @@ export  interface AppConfigInput extends AppConfig {
     noImageId: string;
     messages: {
         productAdded: string;
+        productRemoved: string;
     }
 }
