@@ -15,7 +15,7 @@ const {data: categories} = useNuxtData<ICategory[]>('categories')
 const route = useRoute()
 const isLoading = ref<boolean>(true)
 const pageHandle = computed(() => Array.isArray(route.params.handle) ? '/' + route.params.handle.join('/') : route.params.handle)
-const activeCategory = computed<ICategory>(() => categories.value.find(item => item.handle.endsWith(pageHandle.value)))
+const activeCategory = computed<ICategory | undefined>(() => categories.value?.find(item => item.handle.endsWith(pageHandle.value)))
 const items = ref<ICategory[]>([])
 const products = ref<IProduct[]>([])
 const params = useUrlSearchParams('history', {
@@ -62,7 +62,7 @@ const reFetchData = async () => {
 				fields: ['id', 'handle', 'name', 'images.directus_files_id', 'price']
 			}
 		})
-		totalCount.value = result.meta.filter_count
+		if (result.meta?.filter_count) totalCount.value = result.meta.filter_count
 		if (result.data?.length) products.value = result.data
 	}
 

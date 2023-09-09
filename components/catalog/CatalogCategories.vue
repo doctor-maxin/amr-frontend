@@ -18,7 +18,7 @@ const getItemImage = (item: ICategory): string => {
   <div v-if="items.length" class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-7">
     <template v-for="item of items" :key="item.id">
       <div class="rounded-[1.25rem] overflow-hidden group border relative cursor-pointer">
-        <nuxt-link :to="`/catalog${item.handle.toLowerCase()}`">
+        <nuxt-link :to="`/catalog${item.handle}`">
           <client-only>
             <NuxtImg
                 :class="{
@@ -30,7 +30,7 @@ const getItemImage = (item: ICategory): string => {
             />
           </client-only>
         </nuxt-link>
-        <nuxt-link :to="`/catalog${item.handle.toLowerCase()}`"
+        <nuxt-link :to="`/catalog${item.handle}`"
                    class="font-semibold group-hover:opacity-100 lg:block hidden lg:opacity-0 transition-opacity absolute text-white left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-system-black-600 backdrop-blur-[10px] py-3 px-[1.135rem] rounded-[0.63rem]">
           Посмотреть
         </nuxt-link>

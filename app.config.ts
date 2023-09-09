@@ -5,5 +5,10 @@ export default defineAppConfig({
     messages: {
         productAdded: 'Товар успешно добавлен',
         productRemoved: 'Товар успешно удален'
+    },
+    favorites: {
+        emptyList: 'Тут появятся избранные товары, которые вы добавите',
+        productAdded: 'Товар успешно добавлен',
+        productRemoved: 'Товар успешно удален'
     }
 })

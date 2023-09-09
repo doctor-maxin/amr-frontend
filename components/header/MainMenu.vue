@@ -41,7 +41,7 @@ const {data: settings} = useNuxtData<ISettings>('settings')
 				leave-from-class="translate-y-0"
 				leave-to-class="translate-y-1">
 				<div v-if="api.isOpen"
-				     class="main-menu-content flex flex-col justify-between animate-menu-down transition ml-auto bg-system-gray-500 max-w-[40.1875rem] px-[5.87rem] pt-[3.88rem] pb-[4.56rem]"
+				     class="main-menu-content flex flex-col justify-between animate-menu-down transition ml-auto bg-system-gray-500 max-w-[40.1875rem] px-[5.87rem] "
 				>
 					<nav class="main-nav text-system-black-900" itemscope
 					     itemtype="http://schema.org/SiteNavigationElement">
@@ -118,13 +118,11 @@ const {data: settings} = useNuxtData<ISettings>('settings')
 
 .main-menu {
 	&-content {
-		height: calc(100dvh - 3.875rem);
-
-		@media (min-width: 1024px) {
-			height: calc(100dvh - 5.3125rem);
-		}
-
-
+		height: 100dvh;
+		max-height: calc(100dvh - 5.3125rem );
+		overflow-y: auto;
+		padding-top: 3.88rem;
+		padding-bottom: 4.56rem;
 	}
 
 	address {

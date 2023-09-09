@@ -1,6 +1,9 @@
 <template>
 	<div class="lg:pt-[5.3125rem] pt-[3.875rem] page-layout relative flex flex-col min-h-screen">
 		<TheHeader/>
+		<NuxtLoadingIndicator>
+			<CustomPageLoader />
+		</NuxtLoadingIndicator>
 		<NuxtPage/>
 		<TheFooter/>
 		<ToTopBtn/>
@@ -13,6 +16,7 @@ import ToTopBtn from "./components/common/ToTopBtn.vue";
 import {useCartStore} from "./store/cart.store";
 import {useAsyncData, useDirectusItems} from "#imports";
 import {useFavoritesStore} from "./store/favorites.store";
+import CustomPageLoader from "./components/common/CustomPageLoader.vue";
 
 const {getItems, getSingletonItem} = useDirectusItems();
 const cartStore = useCartStore()

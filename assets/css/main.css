@@ -63,3 +63,9 @@ body {
 .fade-leave-to {
     opacity: 0;
 }
+
+.nuxt-loading-indicator {
+    height: 100vh !important;
+    width: 100vw !important;
+    transform: scaleX(1) !important;
+}

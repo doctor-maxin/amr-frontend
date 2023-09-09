@@ -18,3 +18,5 @@ export type IProduct = {
     }[];
     price: number;
 }
+
+export type IProductPicked = Pick<IProduct, 'handle' | 'id' | 'name' | 'price' | 'images'>

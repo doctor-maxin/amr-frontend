@@ -48,7 +48,7 @@ const list = markRaw([
 					}">
 						<img :src="item.img" class="w-full aspect-[21/13] lg:aspect-auto lg:h-full lg:max-h-[34rem]"/>
 						<div
-							class="glass -mt-[4rem] lg:relative lg:-translate-y-3/4 lg:mt-0 lg:left-0 lg:ml-[50%] z-10 lg:w-[34rem] lg:max-w-[max(0px,_29vw)] lg:max-h-[34rem] rounded-[1.25rem] gap-2 flex flex-col pt-[1.3rem] pl-[1.6rem] pr-[3.6rem] pb-[1.8rem]">
+							class="glass -mt-[4rem] lg:relative lg:-translate-y-3/4 lg:mt-0 lg:left-0 lg:ml-[40%] z-10 lg:w-[34rem] lg:max-w-[max(0px,_28vw)] lg:max-h-[34rem] rounded-[1.25rem] gap-2 flex flex-col pt-[1.3rem] pl-[1.6rem] pr-[3.6rem] pb-[1.8rem]">
 							<h3 class="font-extrabold leading-[140%]">{{ item.title }}</h3>
 							<p class="leading-[140%] text-system-gray-900 text-sm">{{ item.text }}</p>
 						</div>

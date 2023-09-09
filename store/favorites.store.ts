@@ -14,18 +14,28 @@ export const useFavoritesStore = defineStore('favorites', {
         favoritesTotalLength: (state) => state.items.length
     },
     actions: {
+        hasProduct(id: string) {
+          return this.items.includes(id)
+        },
         async getList() {
             const {data} = await useFetch('/api/favorites').json<string[]>()
-            console.log(data.value?.length)
             if (data.value?.length) this.items = data.value
         },
         async addProduct(id: string) {
             const appConfig: AppConfigInput = useAppConfig()
 
-            const {data} = await useFetch('/api/favorites/' + id).post().json<string[]>()
-            if (data.value?.length) {
-                this.items = data.value
-                toast.success(appConfig.messages?.productAdded)
+            if (this.items.includes(id)) {
+                const {data} = await useFetch('/api/favorites/' + id).delete().json<string[]>()
+                if (data.value?.length) {
+                    this.items = data.value
+                    toast.success(appConfig.messages?.productRemoved)
+                }
+            } else {
+                const {data} = await useFetch('/api/favorites/' + id).post().json<string[]>()
+                if (data.value?.length) {
+                    this.items = data.value
+                    toast.success(appConfig.messages?.productAdded)
+                }
             }
         }
     }

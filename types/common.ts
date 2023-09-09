@@ -210,4 +210,9 @@ export  interface AppConfigInput extends AppConfig {
         productAdded: string;
         productRemoved: string;
     }
+    favorites: {
+        emptyList: string;
+        productAdded: string;
+        productRemoved: string;
+    }
 }
