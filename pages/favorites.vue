@@ -31,24 +31,26 @@ const totalCount = ref<number>(0)
 const isLoading = ref<boolean>(false)
 
 watchEffect(async () => {
-	isLoading.value = true;
-	const response = await getItems<IProductPicked>({
-		collection: 'products',
-		params: {
-			filter: {
-				id: {
-					_in: items.value
-				}
-			},
-			meta: 'filter_count',
-			limit: 9,
-			page: params.page,
-			fields: ['id', 'handle', 'name', 'price', 'images.directus_files_id']
-		}
-	})
-	if (response?.meta?.filter_count) totalCount.value = response.meta.filter_count
-	if (response.data) products.value = response.data
-	isLoading.value = false;
+	if (items.value.length) {
+		isLoading.value = true;
+		const response = await getItems<IProductPicked>({
+			collection: 'products',
+			params: {
+				filter: {
+					id: {
+						_in: items.value
+					}
+				},
+				meta: 'filter_count',
+				limit: 9,
+				page: params.page,
+				fields: ['id', 'handle', 'name', 'price', 'images.directus_files_id']
+			}
+		})
+		if (response?.meta?.filter_count) totalCount.value = response.meta.filter_count
+		if (response.data) products.value = response.data
+		isLoading.value = false;
+	}
 })
 </script>
 
