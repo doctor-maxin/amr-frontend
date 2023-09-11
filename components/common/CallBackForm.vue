@@ -3,7 +3,7 @@ import UiButton from "../ui/UiButton.vue";
 import UiInput from "../ui/UiInput.vue";
 import FormHelperLink from "../helpers/FormHelperLink.vue";
 import {Swiper, SwiperSlide} from 'swiper/vue'
-import {useField, useNuxtData} from "../../.nuxt/imports";
+import {ref, useField, useListen, useNuxtData} from "../../.nuxt/imports";
 import {ISettings} from "../../types/common";
 import TelLink from "../helpers/TelLink.vue";
 import EmailLink from "../helpers/EmailLink.vue";
@@ -11,12 +11,20 @@ import EmailLink from "../helpers/EmailLink.vue";
 const {value: callBackType, setValue: setCallBackType} = useField('callBackType', undefined, {
 	initialValue: 'consult'
 })
+const container = ref<HTMLElement | null>(null)
 
 const {data: settings} = useNuxtData<ISettings>('settings')
+
+useListen('toFeedBack', () => {
+  if (container.value) container.value.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'
+  })
+})
 </script>
 
 <template>
-	<section class="grid grid-cols-1 lg:grid-cols-3">
+	<section class="grid grid-cols-1 lg:grid-cols-3" ref="container">
 		<div class="flex flex-col order-1 relative">
 			<img class="absolute w-full h-full object-cover -z-10" src="/images/callback-bg.png">
 			<div class="px-4 lg:p-[4.38rem] lg:pb-[5rem] h-full lg:flex lg:flex-col pt-[3.19rem] pb-[2.59rem]">

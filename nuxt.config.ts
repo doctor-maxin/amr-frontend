@@ -34,6 +34,7 @@ export default defineNuxtConfig({
       autoImportPath: './assets/icons/'
     }],
     '@pinia/nuxt',
+    '@pinia-plugin-persistedstate/nuxt',
     '@vueuse/nuxt',
     ['nuxt-directus', {
       url: 'http://109.195.74.198:8055',

@@ -215,4 +215,7 @@ export  interface AppConfigInput extends AppConfig {
         productAdded: string;
         productRemoved: string;
     }
+    articles: {
+        emptyList: string;
+    }
 }

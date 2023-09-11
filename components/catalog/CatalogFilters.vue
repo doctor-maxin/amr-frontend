@@ -22,8 +22,9 @@ const filterApi = computed(() => popover.connect(stateFilter.value, sendFilter, 
 					<svgo-filter filled class="text-base lg:text-2xl transition-colors group-hover:lg:text-accent-300"/>
 					<span class="text-sm lg:text-xl font-semibold group-hover:lg:text-accent-300 transition-colors">Фильтр</span></button>
 				<button v-bind="sortApi.triggerProps" :class="{
-					'bg-accent-300 text-white lg:text-inherit': sortApi.isOpen
-				}" class="flex px-3 py-2.5 lg:px-0 lg:py-0 lg:bg-transparent group bg-system-gray rounded-[5rem] gap-2 lg:gap-1.5  items-center" type="button">
+					'bg-accent-300 text-white lg:text-inherit': sortApi.isOpen,
+					'bg-system-gray': !sortApi.isOpen,
+				}" class="flex px-3 py-2.5 lg:px-0 lg:py-0 lg:bg-transparent group  rounded-[5rem] gap-2 lg:gap-1.5  items-center" type="button">
 					<svgo-sort filled class="text-base lg:text-2xl transition-colors group-hover:lg:text-accent-300"/>
 					<span class="text-sm lg:text-xl font-semibold group-hover:lg:text-accent-300 transition-colors">Сортировка</span></button>
 				<CatalogFiltersSort :api="sortApi" />

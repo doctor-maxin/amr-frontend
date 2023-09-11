@@ -16,7 +16,7 @@ const slides = markRaw([
 		description: 'Каждая деталь нашей мебели - это произведение искусства, которое привносит индивидуальность и неповторимость в Ваш дом',
 		link: {
 			title: 'Посмотреть решения',
-			href: '#'
+			href: '/catalog'
 		},
 		backgroundImage: 'images/main-banner.jpg'
 	},
@@ -26,7 +26,7 @@ const slides = markRaw([
 		description: 'Каждая деталь нашей мебели - это произведение искусства, которое привносит индивидуальность и неповторимость в Ваш дом',
 		link: {
 			title: 'Посмотреть решения',
-			href: '#'
+			href: '/catalog'
 		},
 		backgroundImage: 'images/main-banner.jpg'
 	},
@@ -36,7 +36,7 @@ const slides = markRaw([
 		description: 'Каждая деталь нашей мебели - это произведение искусства, которое привносит индивидуальность и неповторимость в Ваш дом',
 		link: {
 			title: 'Посмотреть решения',
-			href: '#'
+			href: '/catalog'
 		},
 		backgroundImage: 'images/main-banner.jpg'
 	},
@@ -46,7 +46,7 @@ const slides = markRaw([
 		description: 'Каждая деталь нашей мебели - это произведение искусства, которое привносит индивидуальность и неповторимость в Ваш дом',
 		link: {
 			title: 'Посмотреть решения',
-			href: '#'
+			href: '/catalog'
 		},
 		backgroundImage: 'images/main-banner.jpg'
 	},
@@ -56,7 +56,7 @@ const slides = markRaw([
 		description: 'Каждая деталь нашей мебели - это произведение искусства, которое привносит индивидуальность и неповторимость в Ваш дом',
 		link: {
 			title: 'Посмотреть решения',
-			href: '#'
+			href: '/catalog'
 		},
 		backgroundImage: 'images/main-banner.jpg'
 	},
@@ -70,7 +70,7 @@ const slides = markRaw([
 			<h1 class="text-2xl lg:text-[2.625rem] mb-[1.13rem] lg:mb-[0.87rem] font-bold text-[#26282D] leading-[140%]">
 				Авторская мебель, обладающая уникальным дизайном и неповторимым стилем</h1>
 			<p class="text-[0.875rem] lg:text-base font-medium">Каждая деталь нашей мебели - это произведение искусства, которое привносит индивидуальность и неповторимость в Ваш дом</p>
-			<UiLink title="Посмотреть решения" to="#" class="mt-12 lg:mt-9"/>
+			<UiLink title="Посмотреть решения" to="/catalog" class="mt-12 lg:mt-9"/>
 		</article>
 		<ClientOnly>
 			<Swiper

@@ -30,9 +30,9 @@ const breadCrumbs = markRaw<IBreadCrumb[]>([{
 						<h2 class="text-[1.375rem] font-bold lg:text-[2.25rem] leading-[140%] ">Свяжитесь с нами, если у
 							вас остались вопросы или нужна помощь</h2>
 						<div class="flex pt-7 flex-col gap-[1.125rem]">
-							<UiInput name="name" placeholder="Имя"/>
-							<UiInput name="phone" placeholder="Телефон"/>
-							<UiInput name="comment" placeholder="Комментарий"/>
+							<UiInput name="name" placeholder="Имя" class-name="w-full"/>
+							<UiInput name="phone" placeholder="Телефон" class-name="w-full"/>
+							<UiInput name="comment" placeholder="Комментарий" class-name="w-full"/>
 							<div class="w-full">
 								<UiButton title="Отправить" variant="dark" class="w-full"/>
 								<FormHelperLink class="mt-[0.6rem] block w-full lg:mt-[0.8rem]"/>

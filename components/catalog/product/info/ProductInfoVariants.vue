@@ -1,9 +1,11 @@
 <script setup lang="ts">
-
+defineProps<{
+	options: any[]
+}>()
 </script>
 
 <template>
-<h1>blog</h1>
+<div></div>
 </template>
 
 <style scoped>

@@ -49,7 +49,9 @@ const params = useUrlSearchParams('history', {
 })
 
 const updateParam = () => {
+	console.log('on update')
 	params.sort = apiSelect.value.value.toString()
+	apiSelect.value.close()
 	props.api.close()
 }
 

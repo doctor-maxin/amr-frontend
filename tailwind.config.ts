@@ -54,8 +54,10 @@ export default {
         white: 'white',
         'system-black': {
           900: 'hsl(220, 8%, 16%)', // #26282D,
+          950: 'hsl(223, 8%, 16%)', // #26282D,
           600: 'hsla(0, 0%, 32%, 0.4)', // #51515166
         },
+        'black-30': 'hsla(0, 0%, 0%, 0.3)',
         'system-gray': {
           DEFAULT:  'hsl(0, 0%, 90%)', // #e6e6e6
           400: 'hsl(0, 0%, 21.2%)',// #F1F1F1

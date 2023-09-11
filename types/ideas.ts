@@ -1,11 +1,17 @@
+import {IBlock} from "./common";
+
 export type IIdeaItem = {
     id: number
-    type: 'news' | 'projects' | 'ideas';
-    post: {
-        title: string;
-        text: string;
-        date: string;
+    type: 'news' | 'project' | 'idea';
+    date_created: string;
+    description: string;
+    bloks: {
+        time: string;
+        blocks: IBlock[];
+        version: string;
     }
+    products?: number[];
     image: string;
-    link: string;
+    handle: string;
+    name: string;
 }

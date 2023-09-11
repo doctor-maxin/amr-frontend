@@ -8,6 +8,7 @@ export type IProduct = {
     options: any[];
     optionsValues: any[];
     taxName: null | string;
+    description: string;
     taxValue: null | string;
     vendor: string;
     handle: string;
@@ -17,6 +18,13 @@ export type IProduct = {
         products_id?: string;
     }[];
     price: number;
+}
+
+export type IProductWithCategory = IProduct & {
+    categoryId: {
+        handle: string;
+        id: string;
+    }
 }
 
 export type IProductPicked = Pick<IProduct, 'handle' | 'id' | 'name' | 'price' | 'images'>

@@ -10,5 +10,8 @@ export default defineAppConfig({
         emptyList: 'Тут появятся избранные товары, которые вы добавите',
         productAdded: 'Товар успешно добавлен',
         productRemoved: 'Товар успешно удален'
+    },
+    articles: {
+        emptyList: 'Тут появятся статьи',
     }
 })

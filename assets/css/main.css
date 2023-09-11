@@ -10,6 +10,7 @@ body {
     overscroll-behavior: contain;
     position: relative;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 @supports (font-variation-settings: "wdth" 115) {

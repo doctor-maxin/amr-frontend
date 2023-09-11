@@ -8,7 +8,7 @@ defineProps<{
 
 <template>
 <div :style="{
-	textAlign: block.tunes.alignment.alignment
+	textAlign: block.tunes?.alignment?.alignment
 }">
 	<h1 v-if="block.data.level === 1">{{block.data.text}}</h1>
 	<h2 v-else-if="block.data.level === 2">{{block.data.text}}</h2>
